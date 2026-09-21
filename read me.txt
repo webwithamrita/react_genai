@@ -1,0 +1,37 @@
+generate API KEY to get the free access of the chats 
+1. visit the google gemini get api url
+2. click on the 1st url
+3. then serach for generate the api key 
+4. copy the api key 
+http://aistudio.google.com/api-keys?_gl=1*fuw2y9*_ga*Mjg5ODkxODU4LjE3ODczNzYzNjM.*_ga_P1DBVKWT6V*czE3ODczNzYzNjMkbzEkZzAkdDE3ODczNzYzNjMkajYwJGwwJGgxNTA5MTQyMTIy&project=gen-lang-client-0331314464
+5. store your key locally in a `.env` file using `VITE_GEMINI_API_KEY`
+6. you can delete API keys from Google AI Studio when they are no longer needed
+
+
+API key details
+info
+For details on using auth keys with Gemini API, see our API key documentation.
+API Key
+Configured locally through `.env`; do not commit the key.
+Name
+Default Gemini API Key
+Project name
+projects/426197356219
+Project number
+426197356219
+.............................
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent" \
+  -H 'Content-Type: application/json' \
+  -H 'X-goog-api-key: YOUR_API_KEY' \
+  -X POST \
+  -d '{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Explain how AI works in a few words"
+          }
+        ]
+      }
+    ]
+  }'
